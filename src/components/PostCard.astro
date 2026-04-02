@@ -1,0 +1,26 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { formatDate } from '../utils/content';
+import { withBase } from '../utils/paths';
+
+interface Props {
+  post: CollectionEntry<'posts'>;
+}
+
+const { post } = Astro.props;
+---
+
+<article class="post-card card-surface">
+  <div class="post-card-topline">
+    <p class="card-eyebrow">Article</p>
+    <p class="meta-inline">{formatDate(post.data.publishedAt)}</p>
+  </div>
+  <h3>
+    <a href={withBase(`writing/${post.slug}/`)}>{post.data.title}</a>
+  </h3>
+  <p class="card-summary">{post.data.summary}</p>
+
+  <div class="pill-row">
+    {post.data.tags.slice(0, 3).map((tag) => <span class="pill">{tag}</span>)}
+  </div>
+</article>

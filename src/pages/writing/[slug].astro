@@ -1,0 +1,73 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+import MainLayout from '../../layouts/MainLayout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { formatDate } from '../../utils/content';
+
+const hasProjectFiles =
+  Object.keys(import.meta.glob('/src/content/projects/**/*.{md,mdx}')).length > 0;
+
+export async function getStaticPaths() {
+  const hasPostFiles = Object.keys(import.meta.glob('/src/content/posts/**/*.{md,mdx}')).length > 0;
+
+  if (!hasPostFiles) {
+    return [];
+  }
+
+  const posts = await getCollection('posts');
+
+  return posts
+    .filter((post) => !post.data.draft)
+    .map((post) => ({
+      params: { slug: post.slug },
+      props: { post },
+    }));
+}
+
+interface Props {
+  post: CollectionEntry<'posts'>;
+}
+
+const hasPostFiles = Object.keys(import.meta.glob('/src/content/posts/**/*.{md,mdx}')).length > 0;
+const { post } = Astro.props;
+const { Content } = await post.render();
+const linkedProject = hasProjectFiles && post.data.linkedProject
+  ? (await getCollection('projects')).find((project) => project.slug === post.data.linkedProject)
+  : undefined;
+---
+
+<MainLayout title={post.data.title} description={post.data.summary} image={post.data.cover?.src}>
+  <section class="content-shell">
+    <article class="content-panel">
+      <header class="content-header">
+        <p class="content-kicker">Article</p>
+        <h1 class="content-title">{post.data.title}</h1>
+        <p class="lead">{post.data.summary}</p>
+        <div class="meta-row">
+          <span>{formatDate(post.data.publishedAt)}</span>
+          {post.data.tags.map((tag) => <span>{tag}</span>)}
+        </div>
+      </header>
+
+      <div class="rich-content">
+        <Content />
+      </div>
+    </article>
+  </section>
+
+  {linkedProject && (
+    <section class="section-shell">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Linked project</p>
+          <h2 class="section-title">The case study behind the article.</h2>
+        </div>
+      </div>
+
+      <div class="list-grid">
+        <ProjectCard project={linkedProject} />
+      </div>
+    </section>
+  )}
+</MainLayout>

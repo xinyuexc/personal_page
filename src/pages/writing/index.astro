@@ -1,0 +1,47 @@
+---
+import { getCollection } from 'astro:content';
+
+import MainLayout from '../../layouts/MainLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import { sortByDateDesc, sortByFeaturedRank } from '../../utils/content';
+
+const hasPostFiles = Object.keys(import.meta.glob('/src/content/posts/**/*.{md,mdx}')).length > 0;
+const posts = hasPostFiles
+  ? sortByFeaturedRank(
+      sortByDateDesc((await getCollection('posts')).filter((post) => !post.data.draft)),
+    )
+  : [];
+---
+
+<MainLayout
+  title="Writing"
+  description="A placeholder page for future articles."
+>
+  <section class="content-shell">
+    <div class="content-panel">
+      <div class="content-header">
+        <p class="content-kicker">Writing</p>
+        <h1 class="page-title">Articles will be added here as the portfolio takes shape.</h1>
+        <p class="lead">
+          The goal is to use writing as a calm, clear explanation layer for each real project:
+          what the question was, what method fit, what was learned, and where the limits are.
+        </p>
+      </div>
+
+      {
+        posts.length > 0 ? (
+          <div class="list-grid">
+            {posts.map((post) => <PostCard post={post} />)}
+          </div>
+        ) : (
+          <div class="card-surface empty-state">
+            <strong>No published articles yet.</strong>
+            <p class="meta-copy">
+              Writing will appear here once the first projects are complete enough to explain well.
+            </p>
+          </div>
+        )
+      }
+    </div>
+  </section>
+</MainLayout>

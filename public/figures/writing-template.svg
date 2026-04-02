@@ -1,0 +1,21 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" rx="40" fill="#FBF8F2"/>
+  <rect x="80" y="120" width="220" height="120" rx="24" fill="white" stroke="#D8D2C6"/>
+  <rect x="360" y="120" width="220" height="120" rx="24" fill="white" stroke="#D8D2C6"/>
+  <rect x="640" y="120" width="220" height="120" rx="24" fill="white" stroke="#D8D2C6"/>
+  <rect x="920" y="120" width="200" height="120" rx="24" fill="white" stroke="#D8D2C6"/>
+  <path d="M300 180H360" stroke="#19686A" stroke-width="3" stroke-linecap="round"/>
+  <path d="M580 180H640" stroke="#19686A" stroke-width="3" stroke-linecap="round"/>
+  <path d="M860 180H920" stroke="#19686A" stroke-width="3" stroke-linecap="round"/>
+  <text x="140" y="170" fill="#1A221C" font-family="Manrope, sans-serif" font-size="22" font-weight="700">Question</text>
+  <text x="138" y="206" fill="#5D675F" font-family="Manrope, sans-serif" font-size="18">What is the problem?</text>
+  <text x="434" y="170" fill="#1A221C" font-family="Manrope, sans-serif" font-size="22" font-weight="700">Method</text>
+  <text x="405" y="206" fill="#5D675F" font-family="Manrope, sans-serif" font-size="18">How was it approached?</text>
+  <text x="718" y="170" fill="#1A221C" font-family="Manrope, sans-serif" font-size="22" font-weight="700">Evidence</text>
+  <text x="690" y="206" fill="#5D675F" font-family="Manrope, sans-serif" font-size="18">What supports the point?</text>
+  <text x="976" y="170" fill="#1A221C" font-family="Manrope, sans-serif" font-size="22" font-weight="700">Conclusion</text>
+  <text x="956" y="206" fill="#5D675F" font-family="Manrope, sans-serif" font-size="18">What matters most?</text>
+  <rect x="160" y="360" width="880" height="180" rx="28" fill="white" stroke="#D8D2C6"/>
+  <text x="210" y="430" fill="#1A221C" font-family="Newsreader, serif" font-size="54" font-weight="600">A useful article is usually just:</text>
+  <text x="210" y="492" fill="#5D675F" font-family="Manrope, sans-serif" font-size="28">clear question  +  enough evidence  +  calm explanation</text>
+</svg>

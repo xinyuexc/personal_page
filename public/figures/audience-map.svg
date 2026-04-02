@@ -1,0 +1,21 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" rx="40" fill="#FBF8F2"/>
+  <rect x="60" y="60" width="1080" height="600" rx="28" fill="white" stroke="#D8D2C6"/>
+  <path d="M200 570H1000" stroke="#C9D6D3" stroke-width="2"/>
+  <path d="M220 160V560" stroke="#C9D6D3" stroke-width="2"/>
+  <path d="M220 250H980" stroke="#E9E4DA" stroke-width="1.5" stroke-dasharray="8 8"/>
+  <path d="M220 400H980" stroke="#E9E4DA" stroke-width="1.5" stroke-dasharray="8 8"/>
+  <path d="M400 160V560" stroke="#E9E4DA" stroke-width="1.5" stroke-dasharray="8 8"/>
+  <path d="M620 160V560" stroke="#E9E4DA" stroke-width="1.5" stroke-dasharray="8 8"/>
+  <path d="M820 160V560" stroke="#E9E4DA" stroke-width="1.5" stroke-dasharray="8 8"/>
+  <circle cx="380" cy="290" r="80" fill="#D5EEEC"/>
+  <circle cx="610" cy="230" r="96" fill="#A7D4D5"/>
+  <circle cx="760" cy="410" r="120" fill="#70B8B8"/>
+  <circle cx="910" cy="285" r="84" fill="#2A7D7F"/>
+  <text x="284" y="292" fill="#1A221C" font-family="Manrope, sans-serif" font-size="22" font-weight="700">Value seekers</text>
+  <text x="523" y="234" fill="#1A221C" font-family="Manrope, sans-serif" font-size="24" font-weight="700">Intentional viewers</text>
+  <text x="673" y="414" fill="white" font-family="Manrope, sans-serif" font-size="24" font-weight="700">Casual grazers</text>
+  <text x="850" y="289" fill="white" font-family="Manrope, sans-serif" font-size="21" font-weight="700">Discovery lovers</text>
+  <text x="105" y="145" fill="#5D675F" font-family="Manrope, sans-serif" font-size="20">Higher content involvement</text>
+  <text x="905" y="612" fill="#5D675F" font-family="Manrope, sans-serif" font-size="20">Higher exploration</text>
+</svg>

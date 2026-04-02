@@ -1,43 +1,52 @@
-# [Astro](https://astro.build) GitHub Pages Template
+# CXY Portfolio Site
 
-## 🤖 Automatic Deployment to GitHub Pages
+Minimalist Astro portfolio and writing site for a marketing researcher moving into data science-facing insights roles.
 
-This minimal Astro project template comes with a [GitHub Action](https://github.com/features/actions) that automatically deploys your site to [GitHub Pages](https://pages.github.com/).
+## What is included
 
-For more information, please see our complete deployment guide—[Deploy your Astro Site to GitHub Pages](https://docs.astro.build/en/guides/deploy/github/).
+- Home, projects, writing, and about pages
+- Content collections for portfolio projects and articles
+- MDX-powered posts with figures, tables, code blocks, and reusable callout components
+- GitHub Pages deployment workflow
+- Sitemap, RSS feed, social preview image, and custom `404`
 
-## 🚀 Project Structure
+## Personalize before publishing
 
-Inside of your Astro project, you'll see the following folders and files:
+Update the placeholders in [`src/site.ts`](./src/site.ts):
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- `name`
+- `email`
+- `linkedin`
+- `github`
+- any copy you want to tune for specific job applications
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Project and article content lives in:
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- [`src/content/projects`](./src/content/projects)
+- [`src/content/posts`](./src/content/posts)
 
-Any static assets, like images, can be placed in the `public/` directory.
+Static figures and social assets live in:
 
-## 🧞 Commands
+- [`public/figures`](./public/figures)
+- [`public/og-default.svg`](./public/og-default.svg)
 
-All commands are run from the root of the project, from a terminal:
+## Commands
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| Command | Action |
+| :------ | :----- |
+| `npm install` | Install dependencies |
+| `npm run dev` | Start the local dev server |
+| `npm run build` | Build the static site |
+| `npm run preview` | Preview the built site locally |
 
-## 👀 Want to learn more?
+## GitHub Pages
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+The site uses the included workflow in [`.github/workflows/deploy.yml`](./.github/workflows/deploy.yml).
+
+On GitHub:
+
+1. Push this repository to GitHub.
+2. In the repository settings, enable GitHub Pages and set the source to `GitHub Actions`.
+3. Push to `main` to trigger deployment.
+
+The Astro config automatically detects whether the repository is a project site like `username.github.io/repo-name` or a user site like `username.github.io`.

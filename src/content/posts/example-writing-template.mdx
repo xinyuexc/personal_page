@@ -1,0 +1,97 @@
+---
+title: Example Portfolio Article
+summary: A simple template for future portfolio writing. This is not a finished case study, but a draft structure showing how a project article can be written.
+publishedAt: 2026-03-28
+tags:
+  - Template
+  - Writing
+  - Portfolio
+featured: true
+featuredRank: 1
+draft: false
+cover:
+  src: figures/writing-template.svg
+  alt: A simple diagram showing the structure of a portfolio article.
+---
+
+import Callout from '../../components/Callout.astro';
+import Figure from '../../components/Figure.astro';
+import MetricStrip from '../../components/MetricStrip.astro';
+import { withBase } from '../../utils/paths';
+
+This page is here as a writing example, not as a completed project. The idea is simple: when a real case study is ready, this structure can be reused and the placeholder language can be replaced with the actual story.
+
+<Callout title="How to use this">
+Treat each section as a prompt. Delete what you do not need, keep the parts that help the reader understand the question, the method, and the outcome, and stay honest about what was real versus simulated.
+</Callout>
+
+## 1. Start with the question
+
+Open with the business or research question in plain language.
+
+Example:
+
+> I wanted to understand whether different audience groups responded differently to a new value proposition, and which signals were most useful for explaining those differences.
+
+That first paragraph should make it clear why the work matters, not just what tools were used.
+
+## 2. State the scope clearly
+
+In a portfolio piece, the reader needs to know what kind of project this was.
+
+| What to clarify | Example |
+| --- | --- |
+| Data source | Public data, synthetic demo data, or personal project data |
+| Goal | Exploration, prediction, segmentation, summarisation, or dashboarding |
+| Output | Notebook, article, chart set, deck, or interactive prototype |
+
+If the data was simulated or partial, say that directly. It makes the writing more credible.
+
+## 3. Show the shape of the work
+
+Use a small metric block if it helps orient the reader.
+
+<MetricStrip
+  items={[
+    { value: '1', label: 'clear question' },
+    { value: '2–4', label: 'useful charts or tables' },
+    { value: '1', label: 'short conclusion' },
+  ]}
+/>
+
+## 4. Add one strong visual
+
+Even a simple diagram helps the article feel grounded.
+
+<Figure
+  src={withBase('figures/writing-template.svg')}
+  alt="A simple article flow showing question, method, evidence, and conclusion."
+  caption="A future article does not need many visuals. One clear figure is usually enough."
+/>
+
+## 5. Include one code or analysis snippet
+
+The point is not to impress with complexity. The point is to show how the analysis was framed.
+
+```python
+question = "Which audience groups respond differently?"
+method = ["clean data", "build comparison table", "test patterns", "write summary"]
+
+for step in method:
+    print(step)
+```
+
+## 6. End with what was learned
+
+A good ending is short and concrete. For example:
+
+- What did the project suggest?
+- What surprised you?
+- What would you improve next?
+- What should a hiring manager understand about how you think?
+
+## 7. Keep the tone calm
+
+Try to write the article as if you are explaining the work to a thoughtful hiring manager. Avoid over-claiming. A simple, honest sentence is usually stronger than a dramatic one.
+
+That is the main reason this example exists: to show that a portfolio article can be modest, readable, and still feel serious.

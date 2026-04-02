@@ -1,0 +1,19 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" rx="40" fill="#FBF8F2"/>
+  <rect x="60" y="60" width="1080" height="600" rx="28" fill="white" stroke="#D8D2C6"/>
+  <circle cx="380" cy="260" r="110" fill="#DCEFE7"/>
+  <circle cx="640" cy="220" r="90" fill="#CFE3E6"/>
+  <circle cx="790" cy="370" r="130" fill="#A8D5D4"/>
+  <circle cx="530" cy="430" r="100" fill="#E3ECDD"/>
+  <circle cx="920" cy="240" r="72" fill="#2A7D7F"/>
+  <text x="300" y="265" fill="#1A221C" font-family="Manrope, sans-serif" font-size="24" font-weight="700">Discovery friction</text>
+  <text x="578" y="225" fill="#1A221C" font-family="Manrope, sans-serif" font-size="22" font-weight="700">Value sensitivity</text>
+  <text x="720" y="375" fill="#1A221C" font-family="Manrope, sans-serif" font-size="24" font-weight="700">Content breadth</text>
+  <text x="450" y="435" fill="#1A221C" font-family="Manrope, sans-serif" font-size="22" font-weight="700">Usability pain</text>
+  <text x="865" y="245" fill="white" font-family="Manrope, sans-serif" font-size="21" font-weight="700">Local relevance</text>
+  <path d="M170 540C280 485 380 520 440 560" stroke="#C9D6D3" stroke-width="3" stroke-linecap="round"/>
+  <path d="M505 540C590 490 690 490 760 540" stroke="#C9D6D3" stroke-width="3" stroke-linecap="round"/>
+  <path d="M810 540C900 510 980 520 1030 560" stroke="#C9D6D3" stroke-width="3" stroke-linecap="round"/>
+  <text x="150" y="610" fill="#5D675F" font-family="Manrope, sans-serif" font-size="20">Lower intensity</text>
+  <text x="945" y="610" fill="#5D675F" font-family="Manrope, sans-serif" font-size="20">Higher intensity</text>
+</svg>

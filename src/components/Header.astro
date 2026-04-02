@@ -1,0 +1,44 @@
+---
+import { siteConfig } from '../site';
+import { stripBase, withBase } from '../utils/paths';
+
+const pathname = stripBase(Astro.url.pathname);
+const navItems = [
+  { label: 'Projects', href: '/projects/' },
+  { label: 'Writing', href: '/writing/' },
+  { label: 'About', href: '/about/' },
+];
+---
+
+<header class="site-header">
+  <div class="site-shell header-shell">
+    <a class="brand" href={withBase()}>
+      <span class="brand-mark">CXY</span>
+      <span class="brand-copy">
+        <strong>{siteConfig.name}</strong>
+        <small>{siteConfig.role}</small>
+      </span>
+    </a>
+
+    <nav aria-label="Primary navigation">
+      <ul class="nav-list">
+        {
+          navItems.map((item) => {
+            const isActive =
+              item.href === '/'
+                ? pathname === '/'
+                : pathname === item.href || pathname.startsWith(item.href);
+
+            return (
+              <li>
+                <a class:list={['nav-link', { active: isActive }]} href={withBase(item.href)}>
+                  {item.label}
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </nav>
+  </div>
+</header>
