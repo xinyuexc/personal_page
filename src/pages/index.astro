@@ -1,34 +1,96 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-import { focusAreas, homeHighlights, siteConfig, timeline } from '../site';
+import { focusAreas, heroStrengths, siteConfig, timeline } from '../site';
 import { withBase } from '../utils/paths';
 ---
 
 <MainLayout
   title={siteConfig.title}
-  description="A minimalist personal site for a marketing researcher moving toward data science and insights roles."
+  description={siteConfig.description}
 >
   <section class="hero-shell">
     <div class="hero-panel">
-      <p class="eyebrow">Marketing Research x Data Science</p>
-      <h1 class="hero-title">A simple portfolio, built around the work I want to do next.</h1>
-      <p class="lead">
-        I spent seven years in marketing research at companies including Kantar and MetrixLab /
-        Toluna, then completed a master’s in data science. This site is a quiet home for the
-        projects and writing I am building as I move toward roles that combine research, analysis,
-        and clear communication.
-      </p>
+      <div class="hero-intro">
+        <div class="hero-photo-frame">
+          <img
+            class="hero-photo"
+            src={withBase('profile_photo.jpg')}
+            alt="Portrait of Xinyue Chen"
+          />
+        </div>
 
-      <ul class="detail-list">
-        {homeHighlights.map((item) => <li>{item}</li>)}
-      </ul>
-
-      <div class="link-row">
-        <a class="button-link" href={withBase('about/')}>About me</a>
-        <a class="text-link" href={withBase('projects/')}>Projects</a>
-        <a class="text-link" href={withBase('writing/')}>Writing</a>
-        <a class="text-link" href={`mailto:${siteConfig.email}`}>Email</a>
+        <div class="hero-copy">
+          <h1 class="hero-title hero-name">{siteConfig.name}</h1>
+          <p class="hero-subtitle">{siteConfig.role}</p>
+        </div>
       </div>
+
+      <p class="lead hero-lead">{siteConfig.intro}</p>
+
+      <div class="hero-strength-grid">
+        {
+          heroStrengths.map((item) => (
+            <article class="strength-card">
+              <div class="strength-icon" aria-hidden="true">
+                {
+                  item.icon === 'globe' && (
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M12 3.5a8.5 8.5 0 1 0 0 17 8.5 8.5 0 0 0 0-17Zm0 0c2.2 2.02 3.5 5.15 3.5 8.5S14.2 18.48 12 20.5m0-17c-2.2 2.02-3.5 5.15-3.5 8.5s1.3 6.48 3.5 8.5m-7.35-5.6h14.7m-14.7-5.8h14.7"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.6"
+                      />
+                    </svg>
+                  )
+                }
+                {
+                  item.icon === 'chart' && (
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M4.5 19.25h15"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-width="1.6"
+                      />
+                      <path
+                        d="M7.25 16.5v-4.25m4.75 4.25V9.25m4.75 7.25V6.5"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-width="1.6"
+                      />
+                    </svg>
+                  )
+                }
+                {
+                  item.icon === 'academic' && (
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="m4.5 9.5 7.5-4 7.5 4-7.5 4-7.5-4Zm3 1.6v3.25c0 .8 2 1.9 4.5 1.9s4.5-1.1 4.5-1.9V11.1m2.4-.1v4.1"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.6"
+                      />
+                      <path
+                        d="M18.9 15.9a.65.65 0 1 0 1.3 0 .65.65 0 0 0-1.3 0Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  )
+                }
+              </div>
+              <p class="strength-copy">{item.title}</p>
+            </article>
+          ))
+        }
+      </div>
+
     </div>
   </section>
 

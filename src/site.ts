@@ -1,21 +1,30 @@
 export const siteConfig = {
-  name: 'CXY',
-  role: 'Research x Data Science Portfolio',
-  title: 'CXY | Research x Data Science Portfolio',
+  name: 'Xinyue Chen',
+  role: 'Mixed-Methods Researcher | Market Insights, Analytics & AI',
+  title: 'Xinyue Chen | Mixed-Methods Researcher | Market Insights, Analytics & AI',
   description:
-    'A simple portfolio-in-progress for research, insights, and data science roles.',
+    'Personal website of Xinyue Chen, a mixed-methods researcher working across market insights, analytics, and AI.',
   intro:
-    'A marketing researcher with a newer data science toolkit, building a focused portfolio one project at a time.',
-  email: 'your.email@example.com',
-  linkedin: 'https://www.linkedin.com/in/your-profile/',
-  github: 'https://github.com/your-github/',
+    'I’m a mixed-methods researcher with 7+ years of experience across international markets, using quantitative, qualitative, and behavioral data to answer business and product questions. I’m especially interested in roles where strong research design and advanced analysis go hand in hand. With experience in SQL, Python, BI tools, and KPI design, I aim to turn complex data into clear, decision-ready insights.',
+  email: 'xinyuept@gmail.com',
+  linkedin: 'https://www.linkedin.com/in/xinyue-c-9b8994140/',
+  github: 'https://github.com/xinyuexc',
   location: 'Open to insights, research, and data science roles across EMEA and global teams.',
 };
 
-export const homeHighlights = [
-  '7 years in marketing research across Kantar and MetrixLab / Toluna',
-  'A recent M.Sc. in Data Science',
-  'Now building a small portfolio around research, analytics, and storytelling',
+export const heroStrengths = [
+  {
+    title: '7+ years of international market research experience',
+    icon: 'globe',
+  },
+  {
+    title: 'Product analytics experience with mixed-methods research',
+    icon: 'chart',
+  },
+  {
+    title: 'Advanced analytics grounded in formal data science training',
+    icon: 'academic',
+  },
 ];
 
 export const timeline = [

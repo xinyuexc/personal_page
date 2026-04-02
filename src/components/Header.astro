@@ -3,22 +3,79 @@ import { siteConfig } from '../site';
 import { stripBase, withBase } from '../utils/paths';
 
 const pathname = stripBase(Astro.url.pathname);
+const contactItems = [
+  { label: 'Email', href: `mailto:${siteConfig.email}`, icon: 'email' },
+  { label: 'LinkedIn', href: siteConfig.linkedin, icon: 'linkedin' },
+  { label: 'GitHub', href: siteConfig.github, icon: 'github' },
+];
 const navItems = [
+  { label: 'Home', href: '/' },
+  { label: 'About Me', href: '/about/' },
   { label: 'Projects', href: '/projects/' },
-  { label: 'Writing', href: '/writing/' },
-  { label: 'About', href: '/about/' },
 ];
 ---
 
 <header class="site-header">
   <div class="site-shell header-shell">
-    <a class="brand" href={withBase()}>
-      <span class="brand-mark">CXY</span>
-      <span class="brand-copy">
-        <strong>{siteConfig.name}</strong>
-        <small>{siteConfig.role}</small>
-      </span>
-    </a>
+    <div class="contact-group">
+      <span class="contact-label">Contact</span>
+      <div class="contact-icons" aria-label="Contact links">
+        {
+          contactItems.map((item) => (
+            <a
+              class="contact-icon"
+              href={item.href}
+              aria-label={item.label}
+              title={item.label}
+              data-label={item.label}
+              target={item.icon === 'email' ? undefined : '_blank'}
+              rel={item.icon === 'email' ? undefined : 'noreferrer'}
+            >
+              {
+                item.icon === 'email' && (
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M4 6.75h16a1.25 1.25 0 0 1 1.25 1.25v8a1.25 1.25 0 0 1-1.25 1.25H4A1.25 1.25 0 0 1 2.75 16V8A1.25 1.25 0 0 1 4 6.75Z"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                    />
+                    <path
+                      d="m4.5 8 7.5 5.5L19.5 8"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.6"
+                    />
+                  </svg>
+                )
+              }
+              {
+                item.icon === 'linkedin' && (
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M6.9 8.2A1.4 1.4 0 1 1 6.9 5.4a1.4 1.4 0 0 1 0 2.8Zm-1.2 2.1h2.4v8H5.7v-8Zm5.2 0h2.3v1.1h.03c.32-.6 1.1-1.24 2.27-1.24 2.42 0 2.87 1.52 2.87 3.5v4.7H16v-4.16c0-1-.02-2.29-1.45-2.29s-1.67 1.09-1.67 2.21v4.24H10.9v-8Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                )
+              }
+              {
+                item.icon === 'github' && (
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 3.2a8.8 8.8 0 0 0-2.78 17.15c.44.08.6-.18.6-.42v-1.47c-2.45.52-2.96-1.03-2.96-1.03-.4-.98-.98-1.24-.98-1.24-.8-.53.06-.52.06-.52.88.06 1.34.88 1.34.88.79 1.31 2.06.93 2.56.71.08-.55.31-.93.56-1.15-1.95-.21-4-.95-4-4.22 0-.93.34-1.69.88-2.29-.09-.21-.38-1.08.08-2.25 0 0 .72-.23 2.36.87A8.39 8.39 0 0 1 12 7.4c.75 0 1.5.1 2.2.31 1.64-1.1 2.36-.87 2.36-.87.46 1.17.17 2.04.08 2.25.55.6.88 1.36.88 2.29 0 3.28-2.05 4-4 4.22.31.26.59.77.59 1.56v2.31c0 .24.16.5.61.42A8.8 8.8 0 0 0 12 3.2Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                )
+              }
+            </a>
+          ))
+        }
+      </div>
+    </div>
 
     <nav aria-label="Primary navigation">
       <ul class="nav-list">
