@@ -88,7 +88,7 @@ export const languages = [
     level: 'Native',
   },
   {
-    title: 'Dutch and German',
+    title: 'Dutch & German',
     level: 'Basic',
   },
 ];

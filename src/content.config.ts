@@ -8,6 +8,7 @@ const projectLinkSchema = z.object({
 const projects = defineCollection({
   type: 'content',
   schema: z.object({
+    category: z.string().optional(),
     title: z.string(),
     summary: z.string(),
     businessQuestion: z.string(),

@@ -1,11 +1,7 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
 
-import PostCard from '../../components/PostCard.astro';
 import MainLayout from '../../layouts/MainLayout.astro';
-import { sortByDateDesc } from '../../utils/content';
-
-const hasPostFiles = Object.keys(import.meta.glob('/src/content/posts/**/*.{md,mdx}')).length > 0;
 
 export async function getStaticPaths() {
   const hasProjectFiles =
@@ -29,87 +25,20 @@ interface Props {
 
 const { project } = Astro.props;
 const { Content } = await project.render();
-const relatedPosts = hasPostFiles
-  ? sortByDateDesc(
-      (await getCollection('posts')).filter(
-        (post) => !post.data.draft && post.data.linkedProject === project.slug,
-      ),
-    )
-  : [];
+const projectCategory = project.data.category ?? 'Project';
 ---
 
 <MainLayout title={project.data.title} description={project.data.summary}>
   <section class="content-shell">
     <article class="content-panel">
-      <header class="content-header">
-        <p class="content-kicker">Project</p>
-        <h1 class="content-title">{project.data.title}</h1>
-        <p class="lead">{project.data.summary}</p>
-        <div class="meta-grid">
-          <div class="meta-card">
-            <strong>Business question</strong>
-            <p class="meta-copy">{project.data.businessQuestion}</p>
-          </div>
-
-          <div class="meta-card">
-            <strong>Data source</strong>
-            <p class="meta-copy">{project.data.dataSource}</p>
-          </div>
-
-          <div class="meta-card">
-            <strong>Methods</strong>
-            <div class="pill-row">
-              {project.data.methods.map((method) => <span class="pill">{method}</span>)}
-            </div>
-          </div>
-
-          <div class="meta-card">
-            <strong>Tools</strong>
-            <div class="pill-row">
-              {project.data.tools.map((tool) => <span class="pill">{tool}</span>)}
-            </div>
-          </div>
-        </div>
-
-        {project.data.links.length > 0 && (
-          <div class="link-row">
-            {project.data.links.map((link) => (
-              <a class="button-link subtle" href={link.href} target="_blank" rel="noreferrer">
-                {link.label}
-              </a>
-            ))}
-          </div>
-        )}
+      <header class="content-header project-article-header">
+        <p class="content-kicker">{projectCategory}</p>
+        <h1 class="content-title project-content-title">{project.data.title}</h1>
       </header>
 
-      <div class="rich-content">
+      <div class="rich-content project-rich-content">
         <Content />
       </div>
     </article>
-  </section>
-
-  <section class="section-shell">
-    <div class="section-head">
-      <div>
-        <p class="eyebrow">Related writing</p>
-        <h2 class="section-title">How the work is explained.</h2>
-      </div>
-    </div>
-
-    {
-      relatedPosts.length > 0 ? (
-        <div class="list-grid">
-          {relatedPosts.map((post) => <PostCard post={post} />)}
-        </div>
-      ) : (
-        <div class="card-surface empty-state">
-          <strong>Related article coming soon.</strong>
-          <p class="meta-copy">
-            This project already has a reserved structure for a companion article and can be expanded
-            as the portfolio grows.
-          </p>
-        </div>
-      )
-    }
   </section>
 </MainLayout>

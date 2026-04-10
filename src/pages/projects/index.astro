@@ -1,44 +1,95 @@
 ---
-import { getCollection } from 'astro:content';
-
 import MainLayout from '../../layouts/MainLayout.astro';
-import ProjectCard from '../../components/ProjectCard.astro';
-import { sortByFeaturedRank } from '../../utils/content';
+import { withBase } from '../../utils/paths';
 
-const hasProjectFiles =
-  Object.keys(import.meta.glob('/src/content/projects/**/*.{md,mdx}')).length > 0;
-const projects = hasProjectFiles ? sortByFeaturedRank(await getCollection('projects')) : [];
+const projectCategories = [
+  {
+    label: 'Data Analysis & Engineering',
+    items: [
+      {
+        title: 'Netflix Catalog Strategy Analysis',
+        summary:
+          'A business-oriented case study that uses public Netflix title data to analyze catalog structure, evolution, and strategic patterns beyond standard EDA.',
+        href: 'projects/netflix-catalog-strategy-analysis/',
+      },
+      {
+        title: 'Coming soon: Automated Data Quality Monitoring',
+        summary:
+          'Placeholder: an analytics engineering case building data quality checks and alerting workflows for reliable reporting.',
+        href: 'projects/data-analysis-engineering-data-quality-monitoring/',
+      },
+    ],
+  },
+  {
+    label: 'Data Science',
+    items: [
+      {
+        title: 'Coming soon: Demand Forecasting with Interpretable Models',
+        summary:
+          'Placeholder: a data science case showing feature engineering, model comparison, and business trade-offs for practical deployment.',
+        href: 'projects/data-science-demand-forecasting/',
+      },
+      {
+        title: 'Coming soon: Customer Churn Risk Modeling',
+        summary:
+          'Placeholder: a data science case on churn prediction, feature interpretation, and practical intervention design.',
+        href: 'projects/data-science-customer-churn-risk-modeling/',
+      },
+    ],
+  },
+  {
+    label: 'Market Research',
+    items: [
+      {
+        title: 'Coming soon: Consumer Segment Opportunity Mapping',
+        summary:
+          'Placeholder: a market research case on segment sizing, drivers, and strategic implications for product and go-to-market decisions.',
+        href: 'projects/market-research-consumer-segment-opportunity/',
+      },
+      {
+        title: 'Coming soon: Brand Tracking and Insight Translation',
+        summary:
+          'Placeholder: a longitudinal market research case turning waves of tracking data into clear business actions.',
+        href: 'projects/market-research-brand-tracking-insights/',
+      },
+    ],
+  },
+];
 ---
 
 <MainLayout
   title="Projects"
-  description="A placeholder page for future portfolio projects."
+  description="A focused selection of projects showing how I approach different problem types and deliver practical outcomes."
 >
-  <section class="content-shell">
-    <div class="content-panel">
-      <div class="content-header">
-        <h1 class="page-title">A few real projects will live here, but not before they are ready.</h1>
+  <section class="content-shell projects-shell">
+    <div class="content-panel projects-panel">
+      <div class="content-header projects-header">
+        <h1 class="page-title projects-title">My Projects</h1>
         <p class="lead">
-          This page is intentionally quiet for now. The plan is to add a small number of portfolio
-          projects that feel honest and complete, rather than filling the site with work that has
-          not truly been done yet.
+          Here are a few real projects I’ve worked on — a small selection to give a sense of how I
+          approach problems, apply my skills, and turn ideas into practical outcomes.
         </p>
       </div>
 
-      {
-        projects.length > 0 ? (
-          <div class="list-grid">
-            {projects.map((project) => <ProjectCard project={project} />)}
-          </div>
-        ) : (
-          <div class="card-surface empty-state">
-            <strong>No published projects yet.</strong>
-            <p class="meta-copy">
-              Case studies will be added here as they are completed and written up properly.
-            </p>
-          </div>
-        )
-      }
+      <div class="projects-category-stack">
+        {
+          projectCategories.map((category) => (
+            <section class="project-category-block">
+              <p class="content-kicker">{category.label}</p>
+              <div class="focus-grid skills-grid projects-list">
+                {category.items.map((item) => (
+                  <article class="card-surface skill-item">
+                    <h3>
+                      <a class="project-title-link" href={withBase(item.href)}>{item.title}</a>
+                    </h3>
+                    <p class="card-summary">{item.summary}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
+          ))
+        }
+      </div>
     </div>
   </section>
 </MainLayout>
