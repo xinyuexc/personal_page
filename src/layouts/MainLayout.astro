@@ -20,7 +20,7 @@ interface Props {
 const {
   title = siteConfig.title,
   description = siteConfig.description,
-  image = 'og-default.svg',
+  image = 'profile_photo.jpg',
 } = Astro.props;
 
 const siteOrigin = Astro.site ?? new URL('https://your-github-username.github.io');
@@ -40,7 +40,6 @@ const socialImage = new URL(normalizedImage, siteOrigin).toString();
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href={withBase('favicon.svg')} />
     <link rel="canonical" href={canonicalUrl} />
     <title>{pageTitle}</title>
 
