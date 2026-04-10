@@ -1,6 +1,6 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-import { focusAreas, heroStrengths, siteConfig, timeline } from '../site';
+import { focusAreas, heroStrengths, languages, siteConfig } from '../site';
 import { withBase } from '../utils/paths';
 ---
 
@@ -31,61 +31,64 @@ import { withBase } from '../utils/paths';
         {
           heroStrengths.map((item) => (
             <article class="strength-card">
-              <div class="strength-icon" aria-hidden="true">
-                {
-                  item.icon === 'globe' && (
-                    <svg viewBox="0 0 24 24">
-                      <path
-                        d="M12 3.5a8.5 8.5 0 1 0 0 17 8.5 8.5 0 0 0 0-17Zm0 0c2.2 2.02 3.5 5.15 3.5 8.5S14.2 18.48 12 20.5m0-17c-2.2 2.02-3.5 5.15-3.5 8.5s1.3 6.48 3.5 8.5m-7.35-5.6h14.7m-14.7-5.8h14.7"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="1.6"
-                      />
-                    </svg>
-                  )
-                }
-                {
-                  item.icon === 'chart' && (
-                    <svg viewBox="0 0 24 24">
-                      <path
-                        d="M4.5 19.25h15"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-width="1.6"
-                      />
-                      <path
-                        d="M7.25 16.5v-4.25m4.75 4.25V9.25m4.75 7.25V6.5"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-width="1.6"
-                      />
-                    </svg>
-                  )
-                }
-                {
-                  item.icon === 'academic' && (
-                    <svg viewBox="0 0 24 24">
-                      <path
-                        d="m4.5 9.5 7.5-4 7.5 4-7.5 4-7.5-4Zm3 1.6v3.25c0 .8 2 1.9 4.5 1.9s4.5-1.1 4.5-1.9V11.1m2.4-.1v4.1"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="1.6"
-                      />
-                      <path
-                        d="M18.9 15.9a.65.65 0 1 0 1.3 0 .65.65 0 0 0-1.3 0Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  )
-                }
+              <div class="strength-head">
+                <div class="strength-icon" aria-hidden="true">
+                  {
+                    item.icon === 'globe' && (
+                      <svg viewBox="0 0 24 24">
+                        <path
+                          d="M12 3.5a8.5 8.5 0 1 0 0 17 8.5 8.5 0 0 0 0-17Zm0 0c2.2 2.02 3.5 5.15 3.5 8.5S14.2 18.48 12 20.5m0-17c-2.2 2.02-3.5 5.15-3.5 8.5s1.3 6.48 3.5 8.5m-7.35-5.6h14.7m-14.7-5.8h14.7"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.6"
+                        />
+                      </svg>
+                    )
+                  }
+                  {
+                    item.icon === 'chart' && (
+                      <svg viewBox="0 0 24 24">
+                        <path
+                          d="M4.5 19.25h15"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-width="1.6"
+                        />
+                        <path
+                          d="M7.25 16.5v-4.25m4.75 4.25V9.25m4.75 7.25V6.5"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-width="1.6"
+                        />
+                      </svg>
+                    )
+                  }
+                  {
+                    item.icon === 'academic' && (
+                      <svg viewBox="0 0 24 24">
+                        <path
+                          d="m4.5 9.5 7.5-4 7.5 4-7.5 4-7.5-4Zm3 1.6v3.25c0 .8 2 1.9 4.5 1.9s4.5-1.1 4.5-1.9V11.1m2.4-.1v4.1"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.6"
+                        />
+                        <path
+                          d="M18.9 15.9a.65.65 0 1 0 1.3 0 .65.65 0 0 0-1.3 0Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    )
+                  }
+                </div>
+                <p class="strength-label">{item.label}</p>
               </div>
-              <p class="strength-copy">{item.title}</p>
+              <p class="strength-copy">{item.detail}</p>
             </article>
           ))
         }
@@ -95,12 +98,11 @@ import { withBase } from '../utils/paths';
   </section>
 
   <section class="section-shell">
-    <div class="content-panel">
-      <p class="eyebrow">Direction</p>
-      <h2 class="section-title">The kind of work I want to grow into.</h2>
-      <div class="focus-grid">
+    <div class="content-panel skills-panel">
+      <h2 class="section-title skills-title">Skills</h2>
+      <div class="focus-grid skills-grid">
         {focusAreas.map((area) => (
-          <article class="card-surface">
+          <article class="card-surface skill-item">
             <h3>{area.title}</h3>
             <p class="card-summary">{area.description}</p>
           </article>
@@ -110,34 +112,17 @@ import { withBase } from '../utils/paths';
   </section>
 
   <section class="section-shell">
-    <div class="content-panel">
-      <p class="eyebrow">In progress</p>
-      <h2 class="section-title">The portfolio will stay small and honest.</h2>
-      <p class="content-intro">
-        I would rather add a small number of real projects than fill the site with work that
-        overstates where I am today. The project and writing sections are ready, but I am keeping
-        them intentionally light until the first pieces are complete.
-      </p>
-      <div class="link-row">
-        <a class="text-link" href={withBase('projects/')}>Open projects</a>
-        <a class="text-link" href={withBase('writing/')}>Open writing</a>
+    <div class="content-panel languages-panel">
+      <h2 class="section-title skills-title">Languages</h2>
+      <div class="languages-grid">
+        {languages.map((item) => (
+          <article class="language-item">
+            <h3>{item.title}</h3>
+            <p class="card-summary">{item.level}</p>
+          </article>
+        ))}
       </div>
     </div>
   </section>
 
-  <section class="section-shell">
-    <div class="about-panel">
-      <p class="eyebrow">Path</p>
-      <h2 class="section-title">A research foundation, followed by a deliberate technical step.</h2>
-      <ol class="timeline-list">
-        {timeline.map((item) => (
-          <li class="timeline-item">
-            <span class="card-eyebrow">{item.period}</span>
-            <strong>{item.label}</strong>
-            <p class="meta-copy">{item.description}</p>
-          </li>
-        ))}
-      </ol>
-    </div>
-  </section>
 </MainLayout>

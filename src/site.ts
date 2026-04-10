@@ -5,7 +5,7 @@ export const siteConfig = {
   description:
     'Personal website of Xinyue Chen, a mixed-methods researcher working across market insights, analytics, and AI.',
   intro:
-    'I’m a mixed-methods researcher with 7+ years of experience across international markets, using quantitative, qualitative, and behavioral data to answer business and product questions. I’m especially interested in roles where strong research design and advanced analysis go hand in hand. With experience in SQL, Python, BI tools, and KPI design, I aim to turn complex data into clear, decision-ready insights.',
+    'I work at the intersection of research, analytics, and business decision-making. With 7+ years of experience across international markets, I combine mixed-methods research with analytical thinking to turn complex questions into clear, actionable insights.',
   email: 'xinyuept@gmail.com',
   linkedin: 'https://www.linkedin.com/in/xinyue-c-9b8994140/',
   github: 'https://github.com/xinyuexc',
@@ -14,15 +14,18 @@ export const siteConfig = {
 
 export const heroStrengths = [
   {
-    title: '7+ years of international market research experience',
+    label: 'Market Research',
+    detail: '7+ years of international market research experience in agencies',
     icon: 'globe',
   },
   {
-    title: 'Product analytics experience with mixed-methods research',
+    label: 'UX Research',
+    detail: 'Product analytics experience with mixed-methods research',
     icon: 'chart',
   },
   {
-    title: 'Advanced analytics grounded in formal data science training',
+    label: 'Data Science Master',
+    detail: 'Advanced analytics grounded in formal data science training',
     icon: 'academic',
   },
 ];
@@ -50,19 +53,43 @@ export const timeline = [
 
 export const focusAreas = [
   {
-    title: 'Survey and audience research',
+    title: 'Data & Analytics',
     description:
-      'Work that starts with a clear question, a sensible method, and an output people can actually use.',
+      'SQL, Python, R, and Excel for data preparation, analysis, automation, and reporting',
   },
   {
-    title: 'Open-ended feedback and text',
+    title: 'Data Engineering & Platforms',
     description:
-      'A growing interest in using data science tools to organise comments, reviews, and open-ended answers responsibly.',
+      'Databricks, PySpark, Spark SQL, ETL/ELT pipelines, dimensional modelling, and data quality checks',
   },
   {
-    title: 'Clear communication',
+    title: 'BI & Decision Support',
     description:
-      'Translating analysis into something concise, calm, and useful for stakeholders is still central to the work.',
+      'Power BI, Tableau, KPI design, dashboarding, and decision-ready reporting',
+  },
+  {
+    title: 'Machine Learning',
+    description: 'scikit-learn, TensorFlow/Keras, and PyTorch for modelling, evaluation, feature engineering, and error analysis',
+  },
+  {
+    title: 'Tools',
+    description:
+      'Git, Bash, Azure, Jupyter notebooks, and workflow automation',
+  },
+];
+
+export const languages = [
+  {
+    title: 'English',
+    level: 'Full professional',
+  },
+  {
+    title: 'Mandarin Chinese',
+    level: 'Native',
+  },
+  {
+    title: 'Dutch and German',
+    level: 'Basic',
   },
 ];
 
