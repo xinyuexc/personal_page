@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: 'Xinyue Chen',
-  role: 'Mixed-Methods Researcher | Market Insights, Analytics & AI',
-  title: 'Xinyue Chen | Mixed-Methods Researcher | Market Insights, Analytics & AI',
+  role: 'Mixed-Methods Research · Market Insights · Analytics & AI',
+  title: 'Xinyue Chen | Mixed-Methods Research · Market Insights · Analytics & AI',
   description:
     'Personal website of Xinyue Chen, a mixed-methods researcher working across market insights, analytics, and AI.',
   intro:

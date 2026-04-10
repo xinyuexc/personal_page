@@ -1,76 +1,56 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-import { siteConfig, timeline, workingStyle } from '../site';
 ---
 
 <MainLayout
-  title="About"
-  description="Background, working style, and role focus across marketing research, insights, and data science."
+  title="About Me"
+  description="Who I am, how my work has evolved across market research, UX research, product analytics, and data science, and what kind of problems I enjoy working on."
 >
-  <section class="content-shell">
-    <div class="about-panel">
-      <p class="eyebrow">About</p>
-      <h1 class="page-title">Research training, client discipline, and a newer technical toolkit.</h1>
-      <p class="lead">
-        My background is rooted in marketing research, where I spent seven years designing
-        quantitative studies, handling client questions, and turning findings into narratives
-        stakeholders could use. After that foundation, I completed a master’s in data science to
-        deepen the analytical side of my work.
-      </p>
-      <p class="content-intro">
-        I am not trying to present myself as having already done everything in this next chapter.
-        The point of this site is simpler than that: to show the background I already have, the
-        direction I am moving in, and the work I will add as it becomes real.
-      </p>
-      <ul class="detail-list">
-        {workingStyle.map((item) => <li>{item}</li>)}
-      </ul>
-      <div class="link-row">
-        <a class="text-link" href={`mailto:${siteConfig.email}`}>Email</a>
-        <a class="text-link" href={siteConfig.linkedin} target="_blank" rel="noreferrer">
-          LinkedIn
-        </a>
-        <a class="text-link" href={siteConfig.github} target="_blank" rel="noreferrer">
-          GitHub
-        </a>
+  <section class="content-shell about-reading-shell">
+    <article class="about-story">
+      <h1 class="page-title about-story-title">Who I am</h1>
+
+      <div class="about-story-prose">
+        <p class="about-story-lead">
+          I’m originally from China and have been living in the Netherlands for the past few years.
+          I have an academic background in both psychology and data science, and over time my work
+          has taken me across market research, UX research, product analytics, and analytics more
+          broadly.
+        </p>
+
+        <p>
+          I spent more than seven years working in international market research, leading
+          quantitative and mixed-methods projects to understand consumer behaviour and support
+          business decisions. Later, I became more interested in how people behave in product
+          contexts and how insights can be translated more directly into product decisions, which
+          led me into UX research and product analytics. That shift eventually led me to study data
+          science, as I wanted to build a stronger foundation in statistics and modern analytical
+          methods. For me, these are not separate career chapters so much as one continuous path:
+          understanding behaviour, asking better questions, and turning different kinds of data into
+          clear, useful decisions. My recent academic work in data science went very well, and it
+          gave me the confidence to work much more deeply with technical tools and analytical
+          workflows.
+        </p>
+
+        <p>
+          I’m someone who enjoys both the people side and the problem-solving side of work. I’m
+          naturally outgoing, talkative, and easy to collaborate with, and I’ve always valued
+          building good relationships with colleagues and friends. At the same time, I’m highly
+          organised, strong in execution, and usually the person who notices patterns,
+          inconsistencies, or practical details that others miss. I like making things clearer, more
+          structured, and more workable — whether that means shaping a research question, cleaning
+          up a messy analysis process, or finding a way through a problem in everyday life.
+        </p>
+
+        <p>
+          Outside work, I enjoy learning new things and following whatever catches my curiosity. I
+          like cooking, experimenting with coffee and tea, listening to podcasts, travelling, and
+          exploring topics like consumer tech and AI tools. Lately, I’ve also been experimenting
+          with AI-assisted building and “vibe coding” through small projects, including this website
+          itself. I like the feeling of picking something up quickly, figuring out how it works, and
+          making it useful.
+        </p>
       </div>
-    </div>
-  </section>
-
-  <section class="section-shell">
-    <div class="about-panel">
-      <p class="eyebrow">Experience</p>
-      <h2 class="section-title">What shaped how I work.</h2>
-      <ol class="timeline-list">
-        {timeline.map((item) => (
-          <li class="timeline-item">
-            <span class="card-eyebrow">{item.period}</span>
-            <strong>{item.label}</strong>
-            <p class="meta-copy">{item.description}</p>
-          </li>
-        ))}
-      </ol>
-    </div>
-  </section>
-
-  <section class="section-shell">
-    <div class="content-panel">
-      <p class="eyebrow">What I am looking for</p>
-      <h2 class="section-title">Roles where research and analysis meet.</h2>
-      <ul class="detail-list">
-        <li>
-          Research or insights work where strong survey foundations, synthesis, and stakeholder
-          storytelling still matter.
-        </li>
-        <li>
-          Teams that want someone with research experience who is actively deepening the technical
-          side of the work.
-        </li>
-        <li>
-          A role that values domain experience, curiosity, and strong communication rather than
-          expecting years of formal data science titles on day one.
-        </li>
-      </ul>
-    </div>
+    </article>
   </section>
 </MainLayout>

@@ -9,7 +9,7 @@
   --accent: #19686a;
   --accent-soft: rgba(25, 104, 106, 0.08);
   --radius: 18px;
-  --shell: min(950px, calc(100vw - 2.5rem));
+  --shell: min(950px, calc(100% - 2.5rem));
 }
 
 *,
@@ -20,6 +20,7 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -148,9 +149,11 @@ ol {
 }
 
 .contact-label {
-  color: var(--muted);
-  font-size: 0.96rem;
-  font-weight: 600;
+  color: var(--accent);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
 .contact-icons {
@@ -226,19 +229,19 @@ ol {
 .content-panel,
 .about-panel {
   display: grid;
-  gap: 1.8rem;
+  gap: 2.5rem;
 }
 
 .hero-intro {
   display: grid;
   grid-template-columns: minmax(0, 186px) minmax(0, 1fr);
   align-items: start;
-  gap: 1.8rem;
+  gap: 3.8rem;
 }
 
 .hero-copy {
   display: grid;
-  gap: 0;
+  gap: 0rem;
   align-content: start;
   padding-top: 3.8rem;
 }
@@ -268,6 +271,40 @@ ol {
   display: grid;
   gap: 1.25rem;
   grid-template-columns: 1fr;
+}
+
+.about-reading-shell {
+  padding-top: 4.4rem;
+}
+
+.about-story {
+  display: grid;
+  gap: 2.55rem;
+  padding: 0;
+}
+
+.about-story-title {
+  max-width: none;
+  margin: 0;
+}
+
+.about-story-prose {
+  display: grid;
+  gap: 1.35rem;
+  width: 100%;
+  max-width: none;
+}
+
+.about-story-prose p {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 2.0;
+}
+
+.about-story-lead {
+  color: var(--text);
+  font-size: clamp(1.08rem, 1.9vw, 1.18rem);
+  line-height: 1.78;
 }
 
 .eyebrow,
@@ -303,11 +340,11 @@ ol {
 }
 
 .hero-subtitle {
-  max-width: 36rem;
+  max-width: 46rem;
   color: var(--accent);
   font-size: clamp(1.05rem, 2vw, 1.2rem);
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 2.5;
   letter-spacing: 0.1em;
   margin: 0;
 }
@@ -600,5 +637,13 @@ ol {
 
   .hero-strength-grid {
     grid-template-columns: 1fr;
+  }
+
+  .about-reading-shell {
+    padding-top: 1.6rem;
+  }
+
+  .about-story {
+    padding: 0;
   }
 }
