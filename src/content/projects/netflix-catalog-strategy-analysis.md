@@ -114,35 +114,35 @@ In the later phase, I added time evolution, interpretable segmentation, and crea
 ## Key Findings
 
 <figure class="project-figure-card project-figure-card-centered">
-  <img src="/figures/netflix-release-to-add-lag.png" alt="Release-to-add lag comparison between Movies and TV Shows" loading="lazy" />
+  <img src="../../figures/netflix-release-to-add-lag.png" alt="Release-to-add lag comparison between Movies and TV Shows" loading="lazy" />
   <figcaption>Freshness view: TV inventory is added faster than movie inventory.</figcaption>
 </figure>
 
 1. **TV is structurally fresher than Movies.** 80.3% of TV shows were added within 3 years versus 64.6% for movies, suggesting different catalog roles and planning horizons.
 
 <figure class="project-figure-card project-figure-card-centered">
-  <img src="/figures/netflix-concentration-curves.png" alt="Concentration curves showing catalog supply concentration" loading="lazy" />
+  <img src="../../figures/netflix-concentration-curves.png" alt="Concentration curves showing catalog supply concentration" loading="lazy" />
   <figcaption>Concentration view: broad catalog footprint, but concentrated supply.</figcaption>
 </figure>
 
 2. **The catalog is international but concentrated.** Top 3 countries account for 56.4% and top 10 for 76.5% of country-tagged titles, highlighting where diversification could have the biggest impact.
 
 <figure class="project-figure-card project-figure-card-centered">
-  <img src="/figures/netflix-geographic-diversification.png" alt="Geographic diversification over time" loading="lazy" />
+  <img src="../../figures/netflix-geographic-diversification.png" alt="Geographic diversification over time" loading="lazy" />
   <figcaption>Time view: geographic diversification accelerated then stabilised.</figcaption>
 </figure>
 
 3. **Diversification shows a clear phase shift.** Geographic breadth expanded quickly in the late 2010s, then stabilized, which supports lifecycle-based strategy instead of one constant growth assumption.
 
 <figure class="project-figure-card project-figure-card-centered">
-  <img src="/figures/netflix-cluster-profile-heatmap.png" alt="Cluster profile heatmap of catalog segments" loading="lazy" />
+  <img src="../../figures/netflix-cluster-profile-heatmap.png" alt="Cluster profile heatmap of catalog segments" loading="lazy" />
   <figcaption>Segmentation view: six interpretable catalog segments.</figcaption>
 </figure>
 
 4. **The catalog is more actionable as segments.** A six-segment view is easier for prioritization, communication, and KPI tracking than treating the library as one undifferentiated pool.
 
 <figure class="project-figure-card project-figure-card-centered project-figure-card-ecosystem">
-  <img src="/figures/netflix-cast-ecosystem-network.png" alt="Cast ecosystem network showing recurring creative communities" loading="lazy" />
+  <img src="../../figures/netflix-cast-ecosystem-network.png" alt="Cast ecosystem network showing recurring creative communities" loading="lazy" />
   <figcaption>Ecosystem view: recurring talent communities indicate repeatable creative patterns.</figcaption>
 </figure>
 
