@@ -593,6 +593,7 @@ ol {
   font-weight: 600;
 }
 
+
 .project-figure-grid {
   display: grid;
   gap: 1rem;
@@ -635,9 +636,51 @@ ol {
   max-width: 700px;
 }
 
+.project-finding-divider {
+  margin: 0.9rem 0 1rem;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
+.finding-figure-1,
+.finding-figure-2,
+.finding-figure-4,
+.finding-figure-5 {
+  max-width: 684px;
+}
+
+.finding-figure-3 {
+  max-width: 836px;
+}
+
+.finding-figure-4 {
+  max-width: 752px;
+}
+
+.finding-figure-5 {
+  max-width: 650px;
+}
+
+.project-video-card {
+  max-width: 320px;
+}
+
+.project-inline-video {
+  width: 100%;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+}
+
 .project-github-link {
   margin-top: 1.5rem;
   color: var(--muted);
+}
+
+.project-github-link hr {
+  margin: 0 0 0.9rem;
+  border: 0;
+  border-top: 1px solid var(--line);
 }
 
 .project-github-link a {

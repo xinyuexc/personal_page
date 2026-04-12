@@ -64,13 +64,15 @@ links:
 
 ## Overview
 
-This project started from a simple question: instead of treating the public Netflix titles dataset as a generic exploratory analysis exercise, what would it look like to approach it as a catalog strategy problem?
+This project was designed to showcase a repeatable BI-style workflow. Using a public Netflix titles dataset, I treated the work not as a generic EDA exercise, but as a catalog strategy problem.
 
-I designed this as a portfolio-grade analytics case study, not a one-off notebook. The goal was to turn public metadata into decision-oriented insight: understand how the catalog is structured, how it changes over time, and which patterns are strategically meaningful. Rather than predicting performance, I focused on clear analytical logic, realistic scope, and stakeholder-ready outputs.
+I developed it into a portfolio-grade analytics case study built around three questions: how the catalog is structured, how the content strategy changed over time, and whether the data reveals strategically meaningful patterns such as genre groupings and recurring director or cast ecosystems.
 
-## The Problem I Wanted to Solve
+At the same time, the scope of the project was defined by the scope of the data. The dataset does not include viewership, user behaviour, or revenue, so the analysis is limited to content strategy as reflected in the titles themselves. Like any real dataset, it also has practical limitations. For example, the data only runs through part of 2021, which affects how that year should be interpreted. A core part of the project was keeping those limits visible while still pushing the analysis as far as the data could support.
 
-A lot of public data projects stop at descriptive charts. I wanted to push this one further by framing it around business questions such as:
+## The Business Questions
+
+One common problem with exploratory analysis is that, without a clear question, it often stops at descriptive charts or a loose collection of visuals. After looking carefully at what the dataset actually contained, I wanted to avoid that by framing the project around a set of business questions:
 
 - Is the catalog more movie-led or TV-led?
 - How fresh is the library, and how quickly are titles added after release?
@@ -78,20 +80,9 @@ A lot of public data projects stop at descriptive charts. I wanted to push this 
 - What does the rating mix suggest about audience positioning?
 - Are there interpretable content segments and recurring creative ecosystems inside the catalog?
 
-That framing shaped both the analysis design and the final outputs. Instead of producing a loose set of visuals, I focused on a small set of questions that can support real stakeholder discussions on catalog direction.
+This framing shaped both the analysis itself and the final outputs. It also made the project feel much closer to the kinds of catalog questions real stakeholders would actually care about.
 
-## What I Built
-
-I built the project as an end-to-end analytics workflow with reusable components:
-
-- Reproducible cleaning and QA pipeline
-- Normalized analytical tables, including bridge structures for countries, genres, cast, and directors
-- Feature layer for freshness, lag, concentration, and breadth
-- Business-facing visual outputs for stakeholder communication
-
-The repository is organized into `data`, `src`, `notebooks`, and `outputs` so the workflow is easy to audit, reproduce, and extend. This reflects how I typically work: build a reliable structure first, then layer interpretation on top.
-
-## Analytical Approach
+## What I Worked On
 
 <div class="project-flow">
   <span>Data audit & cleaning</span>
@@ -105,43 +96,51 @@ The repository is organized into `data`, `src`, `notebooks`, and `outputs` so th
   <span>Executive-ready outputs</span>
 </div>
 
-First, I audited data quality and built a cleaned analytical base. I reviewed missingness, made explicit assumptions for ratings and date parsing, and normalized multi-value fields (country, genre, cast, director) into bridge tables so later analysis would be consistent and reusable.
+I started by exploring the raw data, with a strong focus on data quality. That included reviewing missingness, looking into Netflix’s actual content rating logic so I could validate and group the rating data more sensibly, parsing date fields, and normalizing multi-value columns such as country, genre, cast, and director into bridge tables. The result was a cleaner analytical structure that could support more reliable downstream analysis.
 
-Next, I built the business analysis layer with features such as release-to-add lag, freshness, country breadth, and rating groups. I used concentration metrics and co-occurrence analysis, and handled metadata anomalies (for example negative lags) by excluding them from affected metrics.
+From there, I moved into a first layer of business analysis that was still relatively descriptive, but already more decision-oriented. I looked at things like country concentration, genre concentration, content freshness, and release-to-add lag, and also compared movies and TV shows across those dimensions rather than only reporting overall summaries. This stage used concentration metrics and co-occurrence analysis, and I also handled anomalies carefully. For example, excluding negative lags from the metrics they would otherwise distort.
 
-In the later phase, I added time evolution, interpretable segmentation, and creator/cast ecosystem analysis. Titles were grouped into six business-readable segments using a compact feature set, and outputs were kept commercial and practical rather than overly academic.
+In the more advanced stage of the project, I added time-evolution analysis, segmentation, and director/cast ecosystem analysis. Titles were grouped into six business-readable segments using a compact feature set, and I kept the outputs practical and commercially interpretable rather than overly technical.
 
 ## Key Findings
 
-<figure class="project-figure-card project-figure-card-centered">
+<figure class="project-figure-card project-figure-card-centered finding-figure finding-figure-1">
   <img src="../../figures/netflix-release-to-add-lag.png" alt="Release-to-add lag comparison between Movies and TV Shows" loading="lazy" />
   <figcaption>Freshness view: TV inventory is added faster than movie inventory.</figcaption>
 </figure>
 
 1. **TV is structurally fresher than Movies.** 80.3% of TV shows were added within 3 years versus 64.6% for movies, suggesting different catalog roles and planning horizons.
 
-<figure class="project-figure-card project-figure-card-centered">
+<hr class="project-finding-divider" />
+
+<figure class="project-figure-card project-figure-card-centered finding-figure finding-figure-2">
   <img src="../../figures/netflix-concentration-curves.png" alt="Concentration curves showing catalog supply concentration" loading="lazy" />
   <figcaption>Concentration view: broad catalog footprint, but concentrated supply.</figcaption>
 </figure>
 
 2. **The catalog is international but concentrated.** Top 3 countries account for 56.4% and top 10 for 76.5% of country-tagged titles, highlighting where diversification could have the biggest impact.
 
-<figure class="project-figure-card project-figure-card-centered">
+<hr class="project-finding-divider" />
+
+<figure class="project-figure-card project-figure-card-centered finding-figure finding-figure-3">
   <img src="../../figures/netflix-geographic-diversification.png" alt="Geographic diversification over time" loading="lazy" />
   <figcaption>Time view: geographic diversification accelerated then stabilised.</figcaption>
 </figure>
 
 3. **Diversification shows a clear phase shift.** Geographic breadth expanded quickly in the late 2010s, then stabilized, which supports lifecycle-based strategy instead of one constant growth assumption.
 
-<figure class="project-figure-card project-figure-card-centered">
+<hr class="project-finding-divider" />
+
+<figure class="project-figure-card project-figure-card-centered finding-figure finding-figure-4">
   <img src="../../figures/netflix-cluster-profile-heatmap.png" alt="Cluster profile heatmap of catalog segments" loading="lazy" />
   <figcaption>Segmentation view: six interpretable catalog segments.</figcaption>
 </figure>
 
 4. **The catalog is more actionable as segments.** A six-segment view is easier for prioritization, communication, and KPI tracking than treating the library as one undifferentiated pool.
 
-<figure class="project-figure-card project-figure-card-centered project-figure-card-ecosystem">
+<hr class="project-finding-divider" />
+
+<figure class="project-figure-card project-figure-card-centered project-figure-card-ecosystem finding-figure finding-figure-5">
   <img src="../../figures/netflix-cast-ecosystem-network.png" alt="Cast ecosystem network showing recurring creative communities" loading="lazy" />
   <figcaption>Ecosystem view: recurring talent communities indicate repeatable creative patterns.</figcaption>
 </figure>
@@ -150,8 +149,10 @@ In the later phase, I added time evolution, interpretable segmentation, and crea
 
 ## Final Takeaway
 
-The value of this project is less about one platform and more about a repeatable BI-style workflow. It shows how I move from ambiguous data to usable business output: define decision-relevant questions, build a reliable analytical structure, produce clear metrics and visuals, and communicate results in stakeholder-friendly language. In a role, this is the combination I aim to bring: strong analytical execution plus practical, decision-oriented communication.
+This project shows how I move from ambiguous public data to usable business output: defining decision-relevant questions, building a reliable analytical structure, producing clear metrics and visuals, and then communicating the results in stakeholder-friendly language.
+That is also the combination I want to bring into my future work: strong analytical execution, but always tied to practical and decision-oriented communication.
 
 <div class="project-github-link">
-  The full project materials — including data, code, and notebooks — are available in the <a href="https://github.com/xinyuexc/netflix-catalog-strategy-analysis" target="_blank" rel="noreferrer">GitHub repository</a>.
+  <hr />
+  The full project materials — including data, code, and notebooks — are available on <a href="https://github.com/xinyuexc/netflix-catalog-strategy-analysis" target="_blank" rel="noreferrer">GitHub</a>.
 </div>
