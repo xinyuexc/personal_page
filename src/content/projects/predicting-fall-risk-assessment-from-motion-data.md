@@ -121,5 +121,5 @@ For my future career, the value goes beyond training a deep model. More importan
 
 <div class="project-github-link">
   <hr />
-  The project code is available on GitHub.
+  The project code is available on <a href="https://github.com/xinyuexc/fall-risk-assessment" target="_blank" rel="noreferrer">GitHub</a>.
 </div>
